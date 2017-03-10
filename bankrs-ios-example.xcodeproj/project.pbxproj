@@ -1,0 +1,538 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F779F8791E72887100347A92 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F779F8781E72887100347A92 /* AppDelegate.swift */; };
+		F779F87B1E72887100347A92 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F779F87A1E72887100347A92 /* MasterViewController.swift */; };
+		F779F87D1E72887100347A92 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F779F87C1E72887100347A92 /* DetailViewController.swift */; };
+		F779F8801E72887100347A92 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F779F87E1E72887100347A92 /* Main.storyboard */; };
+		F779F8821E72887100347A92 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F779F8811E72887100347A92 /* Assets.xcassets */; };
+		F779F8851E72887100347A92 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F779F8831E72887100347A92 /* LaunchScreen.storyboard */; };
+		F779F8901E72887100347A92 /* bankrs_ios_exampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F779F88F1E72887100347A92 /* bankrs_ios_exampleTests.swift */; };
+		F779F89B1E72887100347A92 /* bankrs_ios_exampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F779F89A1E72887100347A92 /* bankrs_ios_exampleUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F779F88C1E72887100347A92 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F779F86D1E72887000347A92 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F779F8741E72887000347A92;
+			remoteInfo = "bankrs-ios-example";
+		};
+		F779F8971E72887100347A92 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F779F86D1E72887000347A92 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F779F8741E72887000347A92;
+			remoteInfo = "bankrs-ios-example";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		F779F8751E72887100347A92 /* bankrs-ios-example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "bankrs-ios-example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F779F8781E72887100347A92 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F779F87A1E72887100347A92 /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
+		F779F87C1E72887100347A92 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		F779F87F1E72887100347A92 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F779F8811E72887100347A92 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F779F8841E72887100347A92 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F779F8861E72887100347A92 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F779F88B1E72887100347A92 /* bankrs-ios-exampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "bankrs-ios-exampleTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F779F88F1E72887100347A92 /* bankrs_ios_exampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bankrs_ios_exampleTests.swift; sourceTree = "<group>"; };
+		F779F8911E72887100347A92 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F779F8961E72887100347A92 /* bankrs-ios-exampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "bankrs-ios-exampleUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F779F89A1E72887100347A92 /* bankrs_ios_exampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bankrs_ios_exampleUITests.swift; sourceTree = "<group>"; };
+		F779F89C1E72887100347A92 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F779F8721E72887000347A92 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F779F8881E72887100347A92 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F779F8931E72887100347A92 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F779F86C1E72887000347A92 = {
+			isa = PBXGroup;
+			children = (
+				F779F8771E72887100347A92 /* bankrs-ios-example */,
+				F779F88E1E72887100347A92 /* bankrs-ios-exampleTests */,
+				F779F8991E72887100347A92 /* bankrs-ios-exampleUITests */,
+				F779F8761E72887100347A92 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F779F8761E72887100347A92 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F779F8751E72887100347A92 /* bankrs-ios-example.app */,
+				F779F88B1E72887100347A92 /* bankrs-ios-exampleTests.xctest */,
+				F779F8961E72887100347A92 /* bankrs-ios-exampleUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F779F8771E72887100347A92 /* bankrs-ios-example */ = {
+			isa = PBXGroup;
+			children = (
+				F779F8781E72887100347A92 /* AppDelegate.swift */,
+				F779F87A1E72887100347A92 /* MasterViewController.swift */,
+				F779F87C1E72887100347A92 /* DetailViewController.swift */,
+				F779F87E1E72887100347A92 /* Main.storyboard */,
+				F779F8811E72887100347A92 /* Assets.xcassets */,
+				F779F8831E72887100347A92 /* LaunchScreen.storyboard */,
+				F779F8861E72887100347A92 /* Info.plist */,
+			);
+			path = "bankrs-ios-example";
+			sourceTree = "<group>";
+		};
+		F779F88E1E72887100347A92 /* bankrs-ios-exampleTests */ = {
+			isa = PBXGroup;
+			children = (
+				F779F88F1E72887100347A92 /* bankrs_ios_exampleTests.swift */,
+				F779F8911E72887100347A92 /* Info.plist */,
+			);
+			path = "bankrs-ios-exampleTests";
+			sourceTree = "<group>";
+		};
+		F779F8991E72887100347A92 /* bankrs-ios-exampleUITests */ = {
+			isa = PBXGroup;
+			children = (
+				F779F89A1E72887100347A92 /* bankrs_ios_exampleUITests.swift */,
+				F779F89C1E72887100347A92 /* Info.plist */,
+			);
+			path = "bankrs-ios-exampleUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F779F8741E72887000347A92 /* bankrs-ios-example */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F779F89F1E72887100347A92 /* Build configuration list for PBXNativeTarget "bankrs-ios-example" */;
+			buildPhases = (
+				F779F8711E72887000347A92 /* Sources */,
+				F779F8721E72887000347A92 /* Frameworks */,
+				F779F8731E72887000347A92 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "bankrs-ios-example";
+			productName = "bankrs-ios-example";
+			productReference = F779F8751E72887100347A92 /* bankrs-ios-example.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F779F88A1E72887100347A92 /* bankrs-ios-exampleTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F779F8A21E72887100347A92 /* Build configuration list for PBXNativeTarget "bankrs-ios-exampleTests" */;
+			buildPhases = (
+				F779F8871E72887100347A92 /* Sources */,
+				F779F8881E72887100347A92 /* Frameworks */,
+				F779F8891E72887100347A92 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F779F88D1E72887100347A92 /* PBXTargetDependency */,
+			);
+			name = "bankrs-ios-exampleTests";
+			productName = "bankrs-ios-exampleTests";
+			productReference = F779F88B1E72887100347A92 /* bankrs-ios-exampleTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		F779F8951E72887100347A92 /* bankrs-ios-exampleUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F779F8A51E72887100347A92 /* Build configuration list for PBXNativeTarget "bankrs-ios-exampleUITests" */;
+			buildPhases = (
+				F779F8921E72887100347A92 /* Sources */,
+				F779F8931E72887100347A92 /* Frameworks */,
+				F779F8941E72887100347A92 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F779F8981E72887100347A92 /* PBXTargetDependency */,
+			);
+			name = "bankrs-ios-exampleUITests";
+			productName = "bankrs-ios-exampleUITests";
+			productReference = F779F8961E72887100347A92 /* bankrs-ios-exampleUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F779F86D1E72887000347A92 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = Ingmar.Stein;
+				TargetAttributes = {
+					F779F8741E72887000347A92 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = HB4WAVEWHB;
+						ProvisioningStyle = Automatic;
+					};
+					F779F88A1E72887100347A92 = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = F779F8741E72887000347A92;
+					};
+					F779F8951E72887100347A92 = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = F779F8741E72887000347A92;
+					};
+				};
+			};
+			buildConfigurationList = F779F8701E72887000347A92 /* Build configuration list for PBXProject "bankrs-ios-example" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F779F86C1E72887000347A92;
+			productRefGroup = F779F8761E72887100347A92 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F779F8741E72887000347A92 /* bankrs-ios-example */,
+				F779F88A1E72887100347A92 /* bankrs-ios-exampleTests */,
+				F779F8951E72887100347A92 /* bankrs-ios-exampleUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F779F8731E72887000347A92 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F779F8851E72887100347A92 /* LaunchScreen.storyboard in Resources */,
+				F779F8821E72887100347A92 /* Assets.xcassets in Resources */,
+				F779F8801E72887100347A92 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F779F8891E72887100347A92 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F779F8941E72887100347A92 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F779F8711E72887000347A92 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F779F87D1E72887100347A92 /* DetailViewController.swift in Sources */,
+				F779F87B1E72887100347A92 /* MasterViewController.swift in Sources */,
+				F779F8791E72887100347A92 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F779F8871E72887100347A92 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F779F8901E72887100347A92 /* bankrs_ios_exampleTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F779F8921E72887100347A92 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F779F89B1E72887100347A92 /* bankrs_ios_exampleUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F779F88D1E72887100347A92 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F779F8741E72887000347A92 /* bankrs-ios-example */;
+			targetProxy = F779F88C1E72887100347A92 /* PBXContainerItemProxy */;
+		};
+		F779F8981E72887100347A92 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F779F8741E72887000347A92 /* bankrs-ios-example */;
+			targetProxy = F779F8971E72887100347A92 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		F779F87E1E72887100347A92 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F779F87F1E72887100347A92 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		F779F8831E72887100347A92 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F779F8841E72887100347A92 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F779F89D1E72887100347A92 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F779F89E1E72887100347A92 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F779F8A01E72887100347A92 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = HB4WAVEWHB;
+				INFOPLIST_FILE = "bankrs-ios-example/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.bankrs.bankrs-ios-example";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		F779F8A11E72887100347A92 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = HB4WAVEWHB;
+				INFOPLIST_FILE = "bankrs-ios-example/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.bankrs.bankrs-ios-example";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		F779F8A31E72887100347A92 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "bankrs-ios-exampleTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.bankrs.bankrs-ios-exampleTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/bankrs-ios-example.app/bankrs-ios-example";
+			};
+			name = Debug;
+		};
+		F779F8A41E72887100347A92 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "bankrs-ios-exampleTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.bankrs.bankrs-ios-exampleTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/bankrs-ios-example.app/bankrs-ios-example";
+			};
+			name = Release;
+		};
+		F779F8A61E72887100347A92 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = "bankrs-ios-exampleUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.bankrs.bankrs-ios-exampleUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = "bankrs-ios-example";
+			};
+			name = Debug;
+		};
+		F779F8A71E72887100347A92 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = "bankrs-ios-exampleUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.bankrs.bankrs-ios-exampleUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = "bankrs-ios-example";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F779F8701E72887000347A92 /* Build configuration list for PBXProject "bankrs-ios-example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F779F89D1E72887100347A92 /* Debug */,
+				F779F89E1E72887100347A92 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F779F89F1E72887100347A92 /* Build configuration list for PBXNativeTarget "bankrs-ios-example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F779F8A01E72887100347A92 /* Debug */,
+				F779F8A11E72887100347A92 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F779F8A21E72887100347A92 /* Build configuration list for PBXNativeTarget "bankrs-ios-exampleTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F779F8A31E72887100347A92 /* Debug */,
+				F779F8A41E72887100347A92 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F779F8A51E72887100347A92 /* Build configuration list for PBXNativeTarget "bankrs-ios-exampleUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F779F8A61E72887100347A92 /* Debug */,
+				F779F8A71E72887100347A92 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F779F86D1E72887000347A92 /* Project object */;
+}
