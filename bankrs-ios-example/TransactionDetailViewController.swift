@@ -8,10 +8,9 @@
 
 import UIKit
 
-class DetailViewController: UIViewController {
+class TransactionDetailViewController: UIViewController {
 
     @IBOutlet weak var detailDescriptionLabel: UILabel!
-
 
     func configureView() {
         // Update the user interface for the detail item.
@@ -28,11 +27,6 @@ class DetailViewController: UIViewController {
         self.configureView()
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
     var detailItem: NSDate? {
         didSet {
             // Update the view.
@@ -40,6 +34,4 @@ class DetailViewController: UIViewController {
         }
     }
 
-
 }
-

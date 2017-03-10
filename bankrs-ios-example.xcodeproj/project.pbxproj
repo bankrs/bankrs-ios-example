@@ -10,14 +10,18 @@
 		12A1E82CE427152426E73834 /* Pods_bankrs_ios_exampleUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E4BF5262A02A151325E2FB4 /* Pods_bankrs_ios_exampleUITests.framework */; };
 		44BD6A9F427B37980FA8E967 /* Pods_bankrs_ios_exampleTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE4DB07BBFD7075F37F2D4A0 /* Pods_bankrs_ios_exampleTests.framework */; };
 		58A2CC32FF300B164CAB93E9 /* Pods_bankrs_ios_example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A64312CEC8812A3B2FB62D6F /* Pods_bankrs_ios_example.framework */; };
+		F76B63AD1E729B4E0007A7FB /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76B63AC1E729B4E0007A7FB /* Transaction.swift */; };
+		F76B63B01E729DED0007A7FB /* Amount.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76B63AF1E729DED0007A7FB /* Amount.swift */; };
+		F76B63B21E729F160007A7FB /* TransactionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76B63B11E729F160007A7FB /* TransactionTableViewCell.swift */; };
+		F76B63B41E72A1F50007A7FB /* BankrsApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76B63B31E72A1F50007A7FB /* BankrsApi.swift */; };
 		F779F8791E72887100347A92 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F779F8781E72887100347A92 /* AppDelegate.swift */; };
-		F779F87B1E72887100347A92 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F779F87A1E72887100347A92 /* MasterViewController.swift */; };
-		F779F87D1E72887100347A92 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F779F87C1E72887100347A92 /* DetailViewController.swift */; };
+		F779F87B1E72887100347A92 /* TransactionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F779F87A1E72887100347A92 /* TransactionTableViewController.swift */; };
+		F779F87D1E72887100347A92 /* TransactionDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F779F87C1E72887100347A92 /* TransactionDetailViewController.swift */; };
 		F779F8801E72887100347A92 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F779F87E1E72887100347A92 /* Main.storyboard */; };
 		F779F8821E72887100347A92 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F779F8811E72887100347A92 /* Assets.xcassets */; };
 		F779F8851E72887100347A92 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F779F8831E72887100347A92 /* LaunchScreen.storyboard */; };
-		F779F8901E72887100347A92 /* bankrs_ios_exampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F779F88F1E72887100347A92 /* bankrs_ios_exampleTests.swift */; };
-		F779F89B1E72887100347A92 /* bankrs_ios_exampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F779F89A1E72887100347A92 /* bankrs_ios_exampleUITests.swift */; };
+		F779F8901E72887100347A92 /* BankrsExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F779F88F1E72887100347A92 /* BankrsExampleTests.swift */; };
+		F779F89B1E72887100347A92 /* BankrsExampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F779F89A1E72887100347A92 /* BankrsExampleUITests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,19 +50,23 @@
 		917A709CBA3C704928F2DD50 /* Pods-bankrs-ios-exampleUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bankrs-ios-exampleUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-bankrs-ios-exampleUITests/Pods-bankrs-ios-exampleUITests.release.xcconfig"; sourceTree = "<group>"; };
 		A64312CEC8812A3B2FB62D6F /* Pods_bankrs_ios_example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_bankrs_ios_example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D83C576B73D06CE8EB275379 /* Pods-bankrs-ios-exampleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bankrs-ios-exampleTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-bankrs-ios-exampleTests/Pods-bankrs-ios-exampleTests.release.xcconfig"; sourceTree = "<group>"; };
+		F76B63AC1E729B4E0007A7FB /* Transaction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
+		F76B63AF1E729DED0007A7FB /* Amount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Amount.swift; sourceTree = "<group>"; };
+		F76B63B11E729F160007A7FB /* TransactionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionTableViewCell.swift; sourceTree = "<group>"; };
+		F76B63B31E72A1F50007A7FB /* BankrsApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BankrsApi.swift; sourceTree = "<group>"; };
 		F779F8751E72887100347A92 /* bankrs-ios-example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "bankrs-ios-example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F779F8781E72887100347A92 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F779F87A1E72887100347A92 /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
-		F779F87C1E72887100347A92 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		F779F87A1E72887100347A92 /* TransactionTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionTableViewController.swift; sourceTree = "<group>"; };
+		F779F87C1E72887100347A92 /* TransactionDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailViewController.swift; sourceTree = "<group>"; };
 		F779F87F1E72887100347A92 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F779F8811E72887100347A92 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F779F8841E72887100347A92 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F779F8861E72887100347A92 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F779F88B1E72887100347A92 /* bankrs-ios-exampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "bankrs-ios-exampleTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		F779F88F1E72887100347A92 /* bankrs_ios_exampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bankrs_ios_exampleTests.swift; sourceTree = "<group>"; };
+		F779F88F1E72887100347A92 /* BankrsExampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankrsExampleTests.swift; sourceTree = "<group>"; };
 		F779F8911E72887100347A92 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F779F8961E72887100347A92 /* bankrs-ios-exampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "bankrs-ios-exampleUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		F779F89A1E72887100347A92 /* bankrs_ios_exampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bankrs_ios_exampleUITests.swift; sourceTree = "<group>"; };
+		F779F89A1E72887100347A92 /* BankrsExampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankrsExampleUITests.swift; sourceTree = "<group>"; };
 		F779F89C1E72887100347A92 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FE4DB07BBFD7075F37F2D4A0 /* Pods_bankrs_ios_exampleTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_bankrs_ios_exampleTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -114,6 +122,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		F76B63AE1E729B530007A7FB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F76B63AF1E729DED0007A7FB /* Amount.swift */,
+				F76B63AC1E729B4E0007A7FB /* Transaction.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		F779F86C1E72887000347A92 = {
 			isa = PBXGroup;
 			children = (
@@ -140,12 +157,15 @@
 			isa = PBXGroup;
 			children = (
 				F779F8781E72887100347A92 /* AppDelegate.swift */,
-				F779F87A1E72887100347A92 /* MasterViewController.swift */,
-				F779F87C1E72887100347A92 /* DetailViewController.swift */,
-				F779F87E1E72887100347A92 /* Main.storyboard */,
 				F779F8811E72887100347A92 /* Assets.xcassets */,
-				F779F8831E72887100347A92 /* LaunchScreen.storyboard */,
+				F76B63B31E72A1F50007A7FB /* BankrsApi.swift */,
 				F779F8861E72887100347A92 /* Info.plist */,
+				F779F8831E72887100347A92 /* LaunchScreen.storyboard */,
+				F779F87E1E72887100347A92 /* Main.storyboard */,
+				F76B63AE1E729B530007A7FB /* Model */,
+				F779F87C1E72887100347A92 /* TransactionDetailViewController.swift */,
+				F76B63B11E729F160007A7FB /* TransactionTableViewCell.swift */,
+				F779F87A1E72887100347A92 /* TransactionTableViewController.swift */,
 			);
 			path = "bankrs-ios-example";
 			sourceTree = "<group>";
@@ -153,7 +173,7 @@
 		F779F88E1E72887100347A92 /* bankrs-ios-exampleTests */ = {
 			isa = PBXGroup;
 			children = (
-				F779F88F1E72887100347A92 /* bankrs_ios_exampleTests.swift */,
+				F779F88F1E72887100347A92 /* BankrsExampleTests.swift */,
 				F779F8911E72887100347A92 /* Info.plist */,
 			);
 			path = "bankrs-ios-exampleTests";
@@ -162,7 +182,7 @@
 		F779F8991E72887100347A92 /* bankrs-ios-exampleUITests */ = {
 			isa = PBXGroup;
 			children = (
-				F779F89A1E72887100347A92 /* bankrs_ios_exampleUITests.swift */,
+				F779F89A1E72887100347A92 /* BankrsExampleUITests.swift */,
 				F779F89C1E72887100347A92 /* Info.plist */,
 			);
 			path = "bankrs-ios-exampleUITests";
@@ -450,9 +470,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F779F87D1E72887100347A92 /* DetailViewController.swift in Sources */,
-				F779F87B1E72887100347A92 /* MasterViewController.swift in Sources */,
+				F76B63B01E729DED0007A7FB /* Amount.swift in Sources */,
+				F779F87D1E72887100347A92 /* TransactionDetailViewController.swift in Sources */,
+				F779F87B1E72887100347A92 /* TransactionTableViewController.swift in Sources */,
+				F76B63AD1E729B4E0007A7FB /* Transaction.swift in Sources */,
+				F76B63B21E729F160007A7FB /* TransactionTableViewCell.swift in Sources */,
 				F779F8791E72887100347A92 /* AppDelegate.swift in Sources */,
+				F76B63B41E72A1F50007A7FB /* BankrsApi.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -460,7 +484,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F779F8901E72887100347A92 /* bankrs_ios_exampleTests.swift in Sources */,
+				F779F8901E72887100347A92 /* BankrsExampleTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -468,7 +492,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F779F89B1E72887100347A92 /* bankrs_ios_exampleUITests.swift in Sources */,
+				F779F89B1E72887100347A92 /* BankrsExampleUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
