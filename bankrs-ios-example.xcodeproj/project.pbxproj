@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		12A1E82CE427152426E73834 /* Pods_bankrs_ios_exampleUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E4BF5262A02A151325E2FB4 /* Pods_bankrs_ios_exampleUITests.framework */; };
+		44BD6A9F427B37980FA8E967 /* Pods_bankrs_ios_exampleTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE4DB07BBFD7075F37F2D4A0 /* Pods_bankrs_ios_exampleTests.framework */; };
+		58A2CC32FF300B164CAB93E9 /* Pods_bankrs_ios_example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A64312CEC8812A3B2FB62D6F /* Pods_bankrs_ios_example.framework */; };
 		F779F8791E72887100347A92 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F779F8781E72887100347A92 /* AppDelegate.swift */; };
 		F779F87B1E72887100347A92 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F779F87A1E72887100347A92 /* MasterViewController.swift */; };
 		F779F87D1E72887100347A92 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F779F87C1E72887100347A92 /* DetailViewController.swift */; };
@@ -35,6 +38,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		119FE35121AA415DF092F5FD /* Pods-bankrs-ios-example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bankrs-ios-example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-bankrs-ios-example/Pods-bankrs-ios-example.debug.xcconfig"; sourceTree = "<group>"; };
+		1498B3680DA4AC1BC16F8A0C /* Pods-bankrs-ios-exampleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bankrs-ios-exampleTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-bankrs-ios-exampleTests/Pods-bankrs-ios-exampleTests.debug.xcconfig"; sourceTree = "<group>"; };
+		241B12618397A27790D840B9 /* Pods-bankrs-ios-example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bankrs-ios-example.release.xcconfig"; path = "Pods/Target Support Files/Pods-bankrs-ios-example/Pods-bankrs-ios-example.release.xcconfig"; sourceTree = "<group>"; };
+		3A1861AD94F84C0368A8682C /* Pods-bankrs-ios-exampleUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bankrs-ios-exampleUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-bankrs-ios-exampleUITests/Pods-bankrs-ios-exampleUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		4E4BF5262A02A151325E2FB4 /* Pods_bankrs_ios_exampleUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_bankrs_ios_exampleUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		917A709CBA3C704928F2DD50 /* Pods-bankrs-ios-exampleUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bankrs-ios-exampleUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-bankrs-ios-exampleUITests/Pods-bankrs-ios-exampleUITests.release.xcconfig"; sourceTree = "<group>"; };
+		A64312CEC8812A3B2FB62D6F /* Pods_bankrs_ios_example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_bankrs_ios_example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D83C576B73D06CE8EB275379 /* Pods-bankrs-ios-exampleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bankrs-ios-exampleTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-bankrs-ios-exampleTests/Pods-bankrs-ios-exampleTests.release.xcconfig"; sourceTree = "<group>"; };
 		F779F8751E72887100347A92 /* bankrs-ios-example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "bankrs-ios-example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F779F8781E72887100347A92 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F779F87A1E72887100347A92 /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
@@ -49,6 +60,7 @@
 		F779F8961E72887100347A92 /* bankrs-ios-exampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "bankrs-ios-exampleUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F779F89A1E72887100347A92 /* bankrs_ios_exampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bankrs_ios_exampleUITests.swift; sourceTree = "<group>"; };
 		F779F89C1E72887100347A92 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FE4DB07BBFD7075F37F2D4A0 /* Pods_bankrs_ios_exampleTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_bankrs_ios_exampleTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				58A2CC32FF300B164CAB93E9 /* Pods_bankrs_ios_example.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				44BD6A9F427B37980FA8E967 /* Pods_bankrs_ios_exampleTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,12 +84,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				12A1E82CE427152426E73834 /* Pods_bankrs_ios_exampleUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3EADE414B6AC2C871D440EE7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				119FE35121AA415DF092F5FD /* Pods-bankrs-ios-example.debug.xcconfig */,
+				241B12618397A27790D840B9 /* Pods-bankrs-ios-example.release.xcconfig */,
+				1498B3680DA4AC1BC16F8A0C /* Pods-bankrs-ios-exampleTests.debug.xcconfig */,
+				D83C576B73D06CE8EB275379 /* Pods-bankrs-ios-exampleTests.release.xcconfig */,
+				3A1861AD94F84C0368A8682C /* Pods-bankrs-ios-exampleUITests.debug.xcconfig */,
+				917A709CBA3C704928F2DD50 /* Pods-bankrs-ios-exampleUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		BF0012C3DE7DCB5D91B37DBE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A64312CEC8812A3B2FB62D6F /* Pods_bankrs_ios_example.framework */,
+				FE4DB07BBFD7075F37F2D4A0 /* Pods_bankrs_ios_exampleTests.framework */,
+				4E4BF5262A02A151325E2FB4 /* Pods_bankrs_ios_exampleUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		F779F86C1E72887000347A92 = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +121,8 @@
 				F779F88E1E72887100347A92 /* bankrs-ios-exampleTests */,
 				F779F8991E72887100347A92 /* bankrs-ios-exampleUITests */,
 				F779F8761E72887100347A92 /* Products */,
+				3EADE414B6AC2C871D440EE7 /* Pods */,
+				BF0012C3DE7DCB5D91B37DBE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -135,9 +175,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F779F89F1E72887100347A92 /* Build configuration list for PBXNativeTarget "bankrs-ios-example" */;
 			buildPhases = (
+				7F0C3C989BCA8807F2AE0BE5 /* [CP] Check Pods Manifest.lock */,
 				F779F8711E72887000347A92 /* Sources */,
 				F779F8721E72887000347A92 /* Frameworks */,
 				F779F8731E72887000347A92 /* Resources */,
+				AD745105AD29D2FDA7FFC6F2 /* [CP] Embed Pods Frameworks */,
+				8854F35F52F6B522185834B1 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -152,9 +195,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F779F8A21E72887100347A92 /* Build configuration list for PBXNativeTarget "bankrs-ios-exampleTests" */;
 			buildPhases = (
+				20475AC1E41849F3E2353185 /* [CP] Check Pods Manifest.lock */,
 				F779F8871E72887100347A92 /* Sources */,
 				F779F8881E72887100347A92 /* Frameworks */,
 				F779F8891E72887100347A92 /* Resources */,
+				283ABF4720C125012F2BB707 /* [CP] Embed Pods Frameworks */,
+				2A8A7ED9473080B1A1C1C280 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -170,9 +216,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F779F8A51E72887100347A92 /* Build configuration list for PBXNativeTarget "bankrs-ios-exampleUITests" */;
 			buildPhases = (
+				8219AA9EFE56FCA28C5FED6E /* [CP] Check Pods Manifest.lock */,
 				F779F8921E72887100347A92 /* Sources */,
 				F779F8931E72887100347A92 /* Frameworks */,
 				F779F8941E72887100347A92 /* Resources */,
+				89A52F4190E57A76016E3FB7 /* [CP] Embed Pods Frameworks */,
+				A859BA98D9CE95EBBE811ACB /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -257,6 +306,144 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		20475AC1E41849F3E2353185 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		283ABF4720C125012F2BB707 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-bankrs-ios-exampleTests/Pods-bankrs-ios-exampleTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2A8A7ED9473080B1A1C1C280 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-bankrs-ios-exampleTests/Pods-bankrs-ios-exampleTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7F0C3C989BCA8807F2AE0BE5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		8219AA9EFE56FCA28C5FED6E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		8854F35F52F6B522185834B1 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-bankrs-ios-example/Pods-bankrs-ios-example-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		89A52F4190E57A76016E3FB7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-bankrs-ios-exampleUITests/Pods-bankrs-ios-exampleUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A859BA98D9CE95EBBE811ACB /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-bankrs-ios-exampleUITests/Pods-bankrs-ios-exampleUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AD745105AD29D2FDA7FFC6F2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-bankrs-ios-example/Pods-bankrs-ios-example-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F779F8711E72887000347A92 /* Sources */ = {
@@ -415,6 +602,7 @@
 		};
 		F779F8A01E72887100347A92 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 119FE35121AA415DF092F5FD /* Pods-bankrs-ios-example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = HB4WAVEWHB;
@@ -428,6 +616,7 @@
 		};
 		F779F8A11E72887100347A92 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 241B12618397A27790D840B9 /* Pods-bankrs-ios-example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = HB4WAVEWHB;
@@ -441,6 +630,7 @@
 		};
 		F779F8A31E72887100347A92 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1498B3680DA4AC1BC16F8A0C /* Pods-bankrs-ios-exampleTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -455,6 +645,7 @@
 		};
 		F779F8A41E72887100347A92 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D83C576B73D06CE8EB275379 /* Pods-bankrs-ios-exampleTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -469,6 +660,7 @@
 		};
 		F779F8A61E72887100347A92 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3A1861AD94F84C0368A8682C /* Pods-bankrs-ios-exampleUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = "bankrs-ios-exampleUITests/Info.plist";
@@ -482,6 +674,7 @@
 		};
 		F779F8A71E72887100347A92 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 917A709CBA3C704928F2DD50 /* Pods-bankrs-ios-exampleUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = "bankrs-ios-exampleUITests/Info.plist";
