@@ -90,4 +90,42 @@ class BankrsApi {
                 }
         }
     }
+
+    static func categories(_ result: @escaping ([Int: String], Error?) -> Void) {
+        guard let sessionToken = sessionToken else {
+            result([:], nil)
+            return
+        }
+
+        let headers = [
+            "X-Application-Id": applicationId,
+            "X-Token": sessionToken
+        ]
+
+        // Fetch Request
+        sessionManager.request("\(endpoint)/categories", method: .get, headers: headers)
+            .validate()
+            .responseJSON { response in
+                if response.result.error == nil {
+                    debugPrint("HTTP Response Body: \(response.data)")
+                    if let json = response.result.value as? [String: Any] {
+                        if let jsonCategories = json["categories"] as? [[String: Any]] {
+                            var categories = [Int: String]()
+                            for category in jsonCategories {
+                                if let id = category["id"] as? Int, let names = category["names"] as? [String: String], let name = names["en"] {
+                                    categories[id] = name
+                                }
+                            }
+                            result(categories, nil)
+                            return
+                        }
+                    }
+                    result([:], nil)
+                } else {
+                    debugPrint("HTTP Request failed: \(response.result.error)")
+                    result([:], response.result.error)
+                }
+        }
+    }
+
 }

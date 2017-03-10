@@ -12,6 +12,7 @@ class TransactionTableViewController: UITableViewController {
 
     var detailViewController: TransactionDetailViewController?
     var transactions = [Transaction]()
+    var categories = [Int: String]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,13 +44,18 @@ class TransactionTableViewController: UITableViewController {
     // MARK: - Actions
 
     @IBAction func refresh() {
-        BankrsApi.transactions { trx, _ in
-            self.transactions = trx.sorted(by: { (t1, t2) -> Bool in
+        BankrsApi.transactions { transactions, _ in
+            self.transactions = transactions.sorted(by: { (t1, t2) -> Bool in
                 guard let d1 = t1.settlementDate else { return false }
                 guard let d2 = t2.settlementDate else { return true }
                 return d1 > d2
             })
             self.tableView.refreshControl?.endRefreshing()
+            self.tableView.reloadData()
+        }
+
+        BankrsApi.categories { (categories, _) in
+            self.categories = categories
             self.tableView.reloadData()
         }
     }
@@ -108,9 +114,13 @@ class TransactionTableViewController: UITableViewController {
         cell.counterpartyLabel.text = transaction.counterparty?.name ?? "???"
 
         if let categoryId = transaction.categoryId {
-            cell.transactionDetailLabel.text = "Category: \(categoryId)"
+            if let category = categories[categoryId] {
+                cell.transactionDetailLabel.text = category
+            } else {
+                cell.transactionDetailLabel.text = String(categoryId)
+            }
         } else {
-            cell.transactionDetailLabel.text = "Category: unknown"
+            cell.transactionDetailLabel.text = "Unknown"
         }
 
         return cell
