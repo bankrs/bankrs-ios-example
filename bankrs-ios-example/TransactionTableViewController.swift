@@ -7,26 +7,27 @@
 //
 
 import UIKit
-import Alamofire
 
 class TransactionTableViewController: UITableViewController {
 
     var detailViewController: TransactionDetailViewController?
-    var objects = [Transaction]()
+    var transactions = [Transaction]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Login", style: .plain, target: self, action: #selector(logInOut))
     }
-    
+
     func logInOut() {
         if BankrsApi.sessionToken != nil {
-            BankrsApi.logout { error in
+            BankrsApi.logout { _ in
                 self.navigationItem.rightBarButtonItem?.title = "Login"
+                self.transactions = []
+                self.tableView.reloadData()
             }
         } else {
-            BankrsApi.login { error in
+            BankrsApi.login { _ in
                 self.navigationItem.rightBarButtonItem?.title = "Logout"
                 self.refresh()
             }
@@ -42,8 +43,8 @@ class TransactionTableViewController: UITableViewController {
     // MARK: - Actions
 
     @IBAction func refresh() {
-        BankrsApi.transactions { transactions, error in
-            self.objects = transactions.sorted(by: { (t1, t2) -> Bool in
+        BankrsApi.transactions { trx, _ in
+            self.transactions = trx.sorted(by: { (t1, t2) -> Bool in
                 guard let d1 = t1.settlementDate else { return false }
                 guard let d2 = t2.settlementDate else { return true }
                 return d1 > d2
@@ -58,7 +59,7 @@ class TransactionTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showDetail" {
             if let indexPath = self.tableView.indexPathForSelectedRow {
-                let transaction = objects[indexPath.row]
+                let transaction = transactions[indexPath.row]
                 let controller = (segue.destination as! UINavigationController).topViewController as! TransactionDetailViewController
                 controller.detailItem = transaction
                 controller.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem
@@ -74,28 +75,34 @@ class TransactionTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return objects.count
+        return transactions.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TransactionCell", for: indexPath) as! TransactionTableViewCell
 
-        let transaction = objects[indexPath.row]
+        let transaction = transactions[indexPath.row]
 
         if let settlementDate = transaction.settlementDate {
             cell.dateLabel.text = DateFormatter.localizedString(from: settlementDate, dateStyle: .medium, timeStyle: .none)
         } else {
             cell.dateLabel.text = "???"
         }
-        
+
         if let amount = transaction.amount {
             let currencyFormatter = NumberFormatter()
             currencyFormatter.numberStyle = .currency
             currencyFormatter.currencyCode = amount.currency
-            
+
             cell.amountLabel.text = currencyFormatter.string(from: amount.value)
+            if amount.value.compare(NSDecimalNumber.zero) == .orderedAscending {
+                cell.amountLabel.textColor = #colorLiteral(red: 1, green: 0.1491314173, blue: 0, alpha: 1)
+            } else {
+                cell.amountLabel.textColor = #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1)
+            }
         } else {
             cell.amountLabel.text = "???"
+            cell.amountLabel.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         }
 
         cell.counterpartyLabel.text = transaction.counterparty?.name ?? "???"
@@ -107,20 +114,6 @@ class TransactionTableViewController: UITableViewController {
         }
 
         return cell
-    }
-
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            objects.remove(at: indexPath.row)
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
-        }
     }
 
 }

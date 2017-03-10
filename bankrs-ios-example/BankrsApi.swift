@@ -17,8 +17,8 @@ class BankrsApi {
     static let password = "F6hC>dEgAWNnmRg.7xBE"
 
     static var sessionToken: String?
-    
-    static let sessionManager = SessionManager(serverTrustPolicyManager: ServerTrustPolicyManager(policies: ["api-staging.bankrs.com" : .disableEvaluation]))
+
+    static let sessionManager = SessionManager(serverTrustPolicyManager: ServerTrustPolicyManager(policies: ["api-staging.bankrs.com": .disableEvaluation]))
 
     static func login(_ result: @escaping (Error?) -> Void) {
         let headers = [
@@ -50,13 +50,14 @@ class BankrsApi {
             result(nil)
             return
         }
-        
+
         let headers = [
             "X-Application-Id": applicationId,
             "X-Token": sessionToken
         ]
-        
+
         sessionManager.request("\(endpoint)/users/logout", method: .post, headers: headers).validate().response { response in
+            self.sessionToken = nil
             result(response.error)
         }
     }
@@ -66,7 +67,7 @@ class BankrsApi {
             result([], nil)
             return
         }
-        
+
         let headers = [
             "X-Application-Id": applicationId,
             "X-Token": sessionToken

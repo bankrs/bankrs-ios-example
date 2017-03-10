@@ -18,6 +18,7 @@ struct Transaction {
     let settlementDate: Date?
     let amount: Amount?
     let usage: String?
+    let type: String?
 
     init?(json: Any) {
         guard let dict = json as? [AnyHashable: Any] else { return nil }
@@ -33,6 +34,7 @@ struct Transaction {
         settlementDate = dateFormatter.date(from: dict["entry_date"] as! String)
         amount = Amount(json: dict["amount"]!)
         usage = dict["usage"] as? String
-
+        type = dict["type"] as? String
     }
+
 }
