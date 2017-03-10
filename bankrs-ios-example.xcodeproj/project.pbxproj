@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 48;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -22,6 +22,7 @@
 		F779F8851E72887100347A92 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F779F8831E72887100347A92 /* LaunchScreen.storyboard */; };
 		F779F8901E72887100347A92 /* BankrsExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F779F88F1E72887100347A92 /* BankrsExampleTests.swift */; };
 		F779F89B1E72887100347A92 /* BankrsExampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F779F89A1E72887100347A92 /* BankrsExampleUITests.swift */; };
+		F7C35D581E72BC7E00181110 /* Counterparty.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C35D571E72BC7E00181110 /* Counterparty.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +69,7 @@
 		F779F8961E72887100347A92 /* bankrs-ios-exampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "bankrs-ios-exampleUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F779F89A1E72887100347A92 /* BankrsExampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankrsExampleUITests.swift; sourceTree = "<group>"; };
 		F779F89C1E72887100347A92 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F7C35D571E72BC7E00181110 /* Counterparty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Counterparty.swift; sourceTree = "<group>"; };
 		FE4DB07BBFD7075F37F2D4A0 /* Pods_bankrs_ios_exampleTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_bankrs_ios_exampleTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -126,6 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				F76B63AF1E729DED0007A7FB /* Amount.swift */,
+				F7C35D571E72BC7E00181110 /* Counterparty.swift */,
 				F76B63AC1E729B4E0007A7FB /* Transaction.swift */,
 			);
 			name = Model;
@@ -261,7 +264,7 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0820;
 				LastUpgradeCheck = 0820;
-				ORGANIZATIONNAME = Ingmar.Stein;
+				ORGANIZATIONNAME = Bankrs;
 				TargetAttributes = {
 					F779F8741E72887000347A92 = {
 						CreatedOnToolsVersion = 8.2.1;
@@ -281,7 +284,7 @@
 				};
 			};
 			buildConfigurationList = F779F8701E72887000347A92 /* Build configuration list for PBXProject "bankrs-ios-example" */;
-			compatibilityVersion = "Xcode 3.2";
+			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -475,6 +478,7 @@
 				F779F87B1E72887100347A92 /* TransactionTableViewController.swift in Sources */,
 				F76B63AD1E729B4E0007A7FB /* Transaction.swift in Sources */,
 				F76B63B21E729F160007A7FB /* TransactionTableViewCell.swift in Sources */,
+				F7C35D581E72BC7E00181110 /* Counterparty.swift in Sources */,
 				F779F8791E72887100347A92 /* AppDelegate.swift in Sources */,
 				F76B63B41E72A1F50007A7FB /* BankrsApi.swift in Sources */,
 			);
@@ -632,7 +636,7 @@
 				DEVELOPMENT_TEAM = HB4WAVEWHB;
 				INFOPLIST_FILE = "bankrs-ios-example/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.bankrs.bankrs-ios-example";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.bankrs.ios-example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -646,7 +650,7 @@
 				DEVELOPMENT_TEAM = HB4WAVEWHB;
 				INFOPLIST_FILE = "bankrs-ios-example/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.bankrs.bankrs-ios-example";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.bankrs.ios-example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};

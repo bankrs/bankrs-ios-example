@@ -3,7 +3,7 @@
 //  bankrs-ios-example
 //
 //  Created by Ingmar.Stein on 10.03.17.
-//  Copyright © 2017 Ingmar.Stein. All rights reserved.
+//  Copyright © 2017 Bankrs. All rights reserved.
 //
 
 import UIKit
@@ -16,7 +16,7 @@ class TransactionDetailViewController: UIViewController {
         // Update the user interface for the detail item.
         if let detail = self.detailItem {
             if let label = self.detailDescriptionLabel {
-                label.text = detail.description
+                label.text = "TODO"
             }
         }
     }
@@ -27,7 +27,7 @@ class TransactionDetailViewController: UIViewController {
         self.configureView()
     }
 
-    var detailItem: NSDate? {
+    var detailItem: Transaction? {
         didSet {
             // Update the view.
             self.configureView()

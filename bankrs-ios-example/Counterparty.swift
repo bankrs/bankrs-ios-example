@@ -1,5 +1,5 @@
 //
-//  Amount.swift
+//  Counterparty.swift
 //  bankrs-ios-example
 //
 //  Created by Ingmar.Stein on 10.03.17.
@@ -8,14 +8,14 @@
 
 import Foundation
 
-struct Amount {
-    let value: NSDecimalNumber
-    let currency: String
-
+struct Counterparty {
+    let name: String
+    let merchant: String?
+    
     init?(json: Any) {
         guard let dict = json as? [AnyHashable: Any] else { return nil }
-
-        value = NSDecimalNumber(string: dict["value"] as? String)
-        currency = dict["currency"] as! String
+        
+        name = dict["name"] as! String
+        merchant = dict["merchant"] as? String
     }
 }
