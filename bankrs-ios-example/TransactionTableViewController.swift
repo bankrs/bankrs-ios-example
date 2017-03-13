@@ -14,6 +14,9 @@ class TransactionTableViewController: UITableViewController {
     var transactions = [Transaction]()
     var categories = [Int: String]()
 
+    private static let defaultUsername = "john.doe@bankworld.com"
+    private static let defaultPassword = "F6hC>dEgAWNnmRg.7xBE"
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -28,10 +31,32 @@ class TransactionTableViewController: UITableViewController {
                 self.tableView.reloadData()
             }
         } else {
-            BankrsApi.login { _ in
-                self.navigationItem.rightBarButtonItem?.title = "Logout"
-                self.refresh()
+            let alertController = UIAlertController(title: "Login", message: "Please enter your Banrks account", preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "Ok", style: .default) { _ in
+                let username = alertController.textFields![0].text ?? ""
+                let password = alertController.textFields![1].text ?? ""
+
+                BankrsApi.login(username: username, password: password) { _ in
+                    self.navigationItem.rightBarButtonItem?.title = "Logout"
+                    self.refresh()
+                }
             }
+            let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { _ in
+                alertController.dismiss(animated: true, completion: nil)
+            }
+            alertController.addAction(okAction)
+            alertController.addAction(cancelAction)
+            alertController.addTextField { (textField) in
+                textField.placeholder = "Username"
+                textField.text = TransactionTableViewController.defaultUsername
+            }
+            alertController.addTextField { (textField) in
+                textField.placeholder = "Password"
+                textField.text = TransactionTableViewController.defaultPassword
+                textField.isSecureTextEntry = true
+            }
+
+            present(alertController, animated: true, completion: nil)
         }
     }
 

@@ -11,16 +11,14 @@ import Alamofire
 
 class BankrsApi {
 
-    static let endpoint = "https://api-staging.bankrs.com/v1"
-    static let applicationId = "8f80d33b-26ee-4f69-ba7b-6859dde5e207"
-    static let username = "john.doe@bankworld.com"
-    static let password = "F6hC>dEgAWNnmRg.7xBE"
+    private static let endpoint = "https://api-staging.bankrs.com/v1"
+    private static let applicationId = "8f80d33b-26ee-4f69-ba7b-6859dde5e207"
 
     static var sessionToken: String?
 
-    static let sessionManager = SessionManager(serverTrustPolicyManager: ServerTrustPolicyManager(policies: ["api-staging.bankrs.com": .disableEvaluation]))
+    private static let sessionManager = SessionManager(serverTrustPolicyManager: ServerTrustPolicyManager(policies: ["api-staging.bankrs.com": .disableEvaluation]))
 
-    static func login(_ result: @escaping (Error?) -> Void) {
+    static func login(username: String, password: String, _ result: @escaping (Error?) -> Void) {
         let headers = [
             "X-Application-Id": applicationId
         ]
@@ -92,14 +90,8 @@ class BankrsApi {
     }
 
     static func categories(_ result: @escaping ([Int: String], Error?) -> Void) {
-        guard let sessionToken = sessionToken else {
-            result([:], nil)
-            return
-        }
-
         let headers = [
-            "X-Application-Id": applicationId,
-            "X-Token": sessionToken
+            "X-Application-Id": applicationId
         ]
 
         // Fetch Request
