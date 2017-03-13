@@ -120,4 +120,66 @@ class BankrsApi {
         }
     }
 
+    static func bankAccesses(_ result: @escaping ([BankAccess], Error?) -> Void) {
+        guard let sessionToken = sessionToken else {
+            result([], nil)
+            return
+        }
+
+        let headers = [
+            "X-Application-Id": applicationId,
+            "X-Token": sessionToken
+        ]
+
+        // Fetch Request
+        sessionManager.request("\(endpoint)/accesses", method: .get, headers: headers)
+            .validate()
+            .responseJSON { response in
+                if response.result.error == nil {
+                    debugPrint("HTTP Response Body: \(response.data)")
+                    if let json = response.result.value as? [String: Any] {
+                        if let jsonAccesses = json["accesses"] as? [[String: Any]] {
+                            let accesses = jsonAccesses.flatMap { return BankAccess(json: $0) }
+                            result(accesses, nil)
+                            return
+                        }
+                    }
+                    result([], nil)
+                } else {
+                    debugPrint("HTTP Request failed: \(response.result.error)")
+                    result([], response.result.error)
+                }
+        }
+    }
+
+    static func bankAccess(identifier: Int, _ result: @escaping (BankAccess?, Error?) -> Void) {
+        guard let sessionToken = sessionToken else {
+            result(nil, nil)
+            return
+        }
+
+        let headers = [
+            "X-Application-Id": applicationId,
+            "X-Token": sessionToken
+        ]
+
+        // Fetch Request
+        sessionManager.request("\(endpoint)/accesses/\(identifier)", method: .get, headers: headers)
+            .validate()
+            .responseJSON { response in
+                if response.result.error == nil {
+                    debugPrint("HTTP Response Body: \(response.data)")
+                    if let json = response.result.value as? [String: Any], let jsonAccess = json["access"] {
+                        let access = BankAccess(json: jsonAccess)
+                        result(access, nil)
+                        return
+                    }
+                    result(nil, nil)
+                } else {
+                    debugPrint("HTTP Request failed: \(response.result.error)")
+                    result(nil, response.result.error)
+                }
+        }
+    }
+
 }

@@ -19,14 +19,21 @@ class TransactionTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Login", style: .plain, target: self, action: #selector(logInOut))
     }
 
-    func logInOut() {
+    override func viewWillAppear(_ animated: Bool) {
+        self.clearsSelectionOnViewWillAppear = self.splitViewController!.isCollapsed
+        super.viewWillAppear(animated)
+
+    }
+
+    // MARK: - Actions
+
+    @IBAction func logInOut() {
         if BankrsApi.sessionToken != nil {
             BankrsApi.logout { _ in
                 self.navigationItem.rightBarButtonItem?.title = "Login"
+                self.navigationItem.leftBarButtonItem?.isEnabled = false
                 self.transactions = []
                 self.tableView.reloadData()
             }
@@ -38,6 +45,7 @@ class TransactionTableViewController: UITableViewController {
 
                 BankrsApi.login(username: username, password: password) { _ in
                     self.navigationItem.rightBarButtonItem?.title = "Logout"
+                    self.navigationItem.leftBarButtonItem?.isEnabled = true
                     self.refresh()
                 }
             }
@@ -59,14 +67,6 @@ class TransactionTableViewController: UITableViewController {
             present(alertController, animated: true, completion: nil)
         }
     }
-
-    override func viewWillAppear(_ animated: Bool) {
-        self.clearsSelectionOnViewWillAppear = self.splitViewController!.isCollapsed
-        super.viewWillAppear(animated)
-
-    }
-
-    // MARK: - Actions
 
     @IBAction func refresh() {
         BankrsApi.transactions { transactions, _ in
