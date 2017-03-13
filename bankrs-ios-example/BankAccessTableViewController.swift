@@ -36,7 +36,11 @@ class BankAccessTableViewController: UITableViewController {
 
         let access = accesses[indexPath.row]
 
-        cell.textLabel?.text = access.name ?? "<no name set>"
+        if let name = access.name, !name.isEmpty {
+            cell.textLabel?.text = name
+        } else {
+            cell.textLabel?.text = "<empty name>"
+        }
         cell.accessoryType = access.enabled ? .checkmark : .none
 
         return cell

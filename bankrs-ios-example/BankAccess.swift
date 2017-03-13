@@ -21,7 +21,7 @@ struct BankAccess {
         id = dict["id"] as! Int
         bankId = String(describing: dict["bank_id"])
         name = dict["name"] as? String
-        enabled = dict["currency"] as? Bool ?? false
+        enabled = dict["enabled"] as? Bool ?? false
 
         if let bankAccounts = dict["accounts"] as? [Any] {
             accounts = bankAccounts.flatMap { return BankAccount(json: $0) }

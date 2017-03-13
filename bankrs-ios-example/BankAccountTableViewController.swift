@@ -48,6 +48,7 @@ class BankAccountTableViewController: UITableViewController {
 
         cell.textLabel?.text = account.name
         cell.detailTextLabel?.text = currencyFormatter.string(from: account.balance)
+        cell.accessoryType = account.enabled ? .checkmark : .none
 
         return cell
     }

@@ -171,7 +171,6 @@
 		F779F8771E72887100347A92 /* bankrs-ios-example */ = {
 			isa = PBXGroup;
 			children = (
-				F7C35D631E76D9F000181110 /* Utils */,
 				F779F8781E72887100347A92 /* AppDelegate.swift */,
 				F779F8811E72887100347A92 /* Assets.xcassets */,
 				F7C35D5B1E76C51000181110 /* BankAccessTableViewController.swift */,
@@ -184,6 +183,7 @@
 				F779F87C1E72887100347A92 /* TransactionDetailViewController.swift */,
 				F76B63B11E729F160007A7FB /* TransactionTableViewCell.swift */,
 				F779F87A1E72887100347A92 /* TransactionTableViewController.swift */,
+				F7C35D631E76D9F000181110 /* Utils */,
 			);
 			path = "bankrs-ios-example";
 			sourceTree = "<group>";
