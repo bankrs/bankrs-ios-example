@@ -11,12 +11,12 @@ import Alamofire
 
 class BankrsApi {
 
-    private static let endpoint = "https://api-staging.bankrs.com/v1"
+    private static let endpoint = "https://api.staging.bankrs.com/v1"
     private static let applicationId = "8f80d33b-26ee-4f69-ba7b-6859dde5e207"
 
     static var sessionToken: String?
 
-    private static let sessionManager = SessionManager(serverTrustPolicyManager: ServerTrustPolicyManager(policies: ["api-staging.bankrs.com": .disableEvaluation]))
+    private static let sessionManager = SessionManager(serverTrustPolicyManager: ServerTrustPolicyManager(policies: ["api.staging.bankrs.com": .disableEvaluation]))
 
     static func login(username: String, password: String, _ result: @escaping (Error?) -> Void) {
         let headers = [
