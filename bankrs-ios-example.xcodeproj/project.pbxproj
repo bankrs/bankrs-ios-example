@@ -27,8 +27,8 @@
 		F7C35D5E1E76C59400181110 /* BankAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C35D5D1E76C59400181110 /* BankAccess.swift */; };
 		F7C35D601E76CE2800181110 /* BankAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C35D5F1E76CE2800181110 /* BankAccount.swift */; };
 		F7C35D621E76D15C00181110 /* BankAccountTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C35D611E76D15C00181110 /* BankAccountTableViewController.swift */; };
-		F7C35D651E76DA0A00181110 /* Date+Bankrs.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C35D641E76DA0A00181110 /* Date+Bankrs.swift */; };
 		F7D672A21E8BDFB7005E4F45 /* ProviderSearchResultTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D672A11E8BDFB7005E4F45 /* ProviderSearchResultTableViewController.swift */; };
+		F7D672A41E8BECEF005E4F45 /* ChallengeAnswer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D672A31E8BECEF005E4F45 /* ChallengeAnswer.swift */; };
 		F7DA6BCE1E8B8D8800DF6013 /* Provider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DA6BCD1E8B8D8800DF6013 /* Provider.swift */; };
 		F7DA6BD01E8B8DEE00DF6013 /* Challenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DA6BCF1E8B8DEE00DF6013 /* Challenge.swift */; };
 		F7DA6BD21E8B900500DF6013 /* ProviderTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DA6BD11E8B900500DF6013 /* ProviderTableViewController.swift */; };
@@ -83,8 +83,8 @@
 		F7C35D5D1E76C59400181110 /* BankAccess.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BankAccess.swift; sourceTree = "<group>"; };
 		F7C35D5F1E76CE2800181110 /* BankAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BankAccount.swift; sourceTree = "<group>"; };
 		F7C35D611E76D15C00181110 /* BankAccountTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BankAccountTableViewController.swift; sourceTree = "<group>"; };
-		F7C35D641E76DA0A00181110 /* Date+Bankrs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Bankrs.swift"; sourceTree = "<group>"; };
 		F7D672A11E8BDFB7005E4F45 /* ProviderSearchResultTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProviderSearchResultTableViewController.swift; sourceTree = "<group>"; };
+		F7D672A31E8BECEF005E4F45 /* ChallengeAnswer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChallengeAnswer.swift; sourceTree = "<group>"; };
 		F7DA6BCD1E8B8D8800DF6013 /* Provider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Provider.swift; sourceTree = "<group>"; };
 		F7DA6BCF1E8B8DEE00DF6013 /* Challenge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Challenge.swift; sourceTree = "<group>"; };
 		F7DA6BD11E8B900500DF6013 /* ProviderTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProviderTableViewController.swift; sourceTree = "<group>"; };
@@ -149,6 +149,7 @@
 				F7C35D5D1E76C59400181110 /* BankAccess.swift */,
 				F7C35D5F1E76CE2800181110 /* BankAccount.swift */,
 				F7DA6BCF1E8B8DEE00DF6013 /* Challenge.swift */,
+				F7D672A31E8BECEF005E4F45 /* ChallengeAnswer.swift */,
 				F7C35D571E72BC7E00181110 /* Counterparty.swift */,
 				F7DA6BCD1E8B8D8800DF6013 /* Provider.swift */,
 				F76B63AC1E729B4E0007A7FB /* Transaction.swift */,
@@ -195,7 +196,6 @@
 				F779F87C1E72887100347A92 /* TransactionDetailViewController.swift */,
 				F76B63B11E729F160007A7FB /* TransactionTableViewCell.swift */,
 				F779F87A1E72887100347A92 /* TransactionTableViewController.swift */,
-				F7C35D631E76D9F000181110 /* Utils */,
 			);
 			path = "bankrs-ios-example";
 			sourceTree = "<group>";
@@ -216,14 +216,6 @@
 				F779F89C1E72887100347A92 /* Info.plist */,
 			);
 			path = "bankrs-ios-exampleUITests";
-			sourceTree = "<group>";
-		};
-		F7C35D631E76D9F000181110 /* Utils */ = {
-			isa = PBXGroup;
-			children = (
-				F7C35D641E76DA0A00181110 /* Date+Bankrs.swift */,
-			);
-			name = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -514,9 +506,9 @@
 				F779F87D1E72887100347A92 /* TransactionDetailViewController.swift in Sources */,
 				F7DA6BD01E8B8DEE00DF6013 /* Challenge.swift in Sources */,
 				F779F87B1E72887100347A92 /* TransactionTableViewController.swift in Sources */,
-				F7C35D651E76DA0A00181110 /* Date+Bankrs.swift in Sources */,
 				F7C35D601E76CE2800181110 /* BankAccount.swift in Sources */,
 				F7D672A21E8BDFB7005E4F45 /* ProviderSearchResultTableViewController.swift in Sources */,
+				F7D672A41E8BECEF005E4F45 /* ChallengeAnswer.swift in Sources */,
 				F76B63AD1E729B4E0007A7FB /* Transaction.swift in Sources */,
 				F76B63B21E729F160007A7FB /* TransactionTableViewCell.swift in Sources */,
 				F7DA6BD21E8B900500DF6013 /* ProviderTableViewController.swift in Sources */,

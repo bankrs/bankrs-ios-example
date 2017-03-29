@@ -9,12 +9,60 @@
 import Foundation
 import Alamofire
 
+enum BankrsRouter {
+
+    fileprivate static let baseURL = URL(string: "https://api.staging.bankrs.com/v1")
+
+    case login
+    case logout
+    case getTransactions
+    case getCategories
+    case getBankAccesses
+    case getBankAccess(Int)
+    case createBankAccess
+    case getProviders
+
+    var url: URL {
+        return URL(string: path, relativeTo: BankrsRouter.baseURL)!
+    }
+
+    var route: (path: String, method: Alamofire.HTTPMethod) {
+        switch self {
+        case .login:                         return ("/users/login", .post)
+        case .logout:                        return ("/users/logout", .post)
+        case .getTransactions:               return ("/transactions", .get)
+        case .getCategories:                 return ("/categories", .get)
+        case .getBankAccesses:               return ("/accesses", .get)
+        case .getBankAccess(let identifier): return ("/accesses/\(identifier)", .get)
+        case .createBankAccess:              return ("/accesses", .post)
+        case .getProviders:                  return ("/providers", .get)
+        }
+    }
+
+    var path: String {
+        return route.path
+    }
+
+    var method: Alamofire.HTTPMethod {
+        return route.method
+    }
+
+    /*
+    func asURLRequest() throws -> URLRequest {
+        var urlRequest = URLRequest(url: url)
+        urlRequest.httpMethod = method.rawValue
+        return urlRequest
+    }
+     */
+
+}
+
 class BankrsApi {
 
-    private static let endpoint = "https://api.staging.bankrs.com/v1"
-    private static let applicationId = "8f80d33b-26ee-4f69-ba7b-6859dde5e207"
 
     static var sessionToken: String?
+
+    private static let applicationId = "8f80d33b-26ee-4f69-ba7b-6859dde5e207"
 
     private static let sessionManager = SessionManager(serverTrustPolicyManager: ServerTrustPolicyManager(policies: ["api.staging.bankrs.com": .disableEvaluation]))
 
@@ -28,7 +76,8 @@ class BankrsApi {
             "password": password
         ]
 
-        sessionManager.request("\(endpoint)/users/login", method: .post, parameters: body, encoding: JSONEncoding.default, headers: headers).validate().responseJSON { response in
+        let route = BankrsRouter.login
+        sessionManager.request(route.url, method: route.method, parameters: body, encoding: JSONEncoding.default, headers: headers).validate().responseJSON { response in
             switch response.result {
             case .success:
                 print("Login successful")
@@ -54,7 +103,8 @@ class BankrsApi {
             "X-Token": sessionToken
         ]
 
-        sessionManager.request("\(endpoint)/users/logout", method: .post, headers: headers).validate().response { response in
+        let route = BankrsRouter.logout
+        sessionManager.request(route.url, method: route.method, headers: headers).validate().response { response in
             self.sessionToken = nil
             result(response.error)
         }
@@ -71,8 +121,8 @@ class BankrsApi {
             "X-Token": sessionToken
         ]
 
-        // Fetch Request
-        sessionManager.request("\(endpoint)/transactions", method: .get, headers: headers)
+        let route = BankrsRouter.getTransactions
+        sessionManager.request(route.url, method: route.method, headers: headers)
             .validate()
             .responseJSON { response in
                 if response.result.error == nil {
@@ -94,8 +144,8 @@ class BankrsApi {
             "X-Application-Id": applicationId
         ]
 
-        // Fetch Request
-        sessionManager.request("\(endpoint)/categories", method: .get, headers: headers)
+        let route = BankrsRouter.getCategories
+        sessionManager.request(route.url, method: route.method, headers: headers)
             .validate()
             .responseJSON { response in
                 if response.result.error == nil {
@@ -131,8 +181,8 @@ class BankrsApi {
             "X-Token": sessionToken
         ]
 
-        // Fetch Request
-        sessionManager.request("\(endpoint)/accesses", method: .get, headers: headers)
+        let route = BankrsRouter.getBankAccesses
+        sessionManager.request(route.url, method: route.method, headers: headers)
             .validate()
             .responseJSON { response in
                 if response.result.error == nil {
@@ -161,8 +211,8 @@ class BankrsApi {
             "X-Token": sessionToken
         ]
 
-        // Fetch Request
-        sessionManager.request("\(endpoint)/accesses/\(identifier)", method: .get, headers: headers)
+        let route = BankrsRouter.getBankAccess(identifier)
+        sessionManager.request(route.url, method: route.method, headers: headers)
             .validate()
             .responseJSON { response in
                 if response.result.error == nil {
@@ -195,8 +245,8 @@ class BankrsApi {
             "q": query
         ]
 
-        // Fetch Request
-        sessionManager.request("\(endpoint)/providers", method: .get, parameters: parameters, headers: headers)
+        let route = BankrsRouter.getProviders
+        sessionManager.request(route.url, method: route.method, parameters: parameters, headers: headers)
             .validate()
             .responseJSON { response in
                 if response.result.error == nil {
@@ -214,5 +264,39 @@ class BankrsApi {
                 }
         }
     }
-    
+
+    static func addAccess(providerId: String, answers: [ChallengeAnswer], _ result: @escaping (URL?, Error?) -> Void) {
+        guard let sessionToken = sessionToken else {
+            result(nil, nil)
+            return
+        }
+
+        let headers = [
+            "X-Application-Id": applicationId,
+            "X-Token": sessionToken
+        ]
+
+        let parameters: Parameters = [
+            "provider_id": providerId,
+            "challenge_answers": answers.map { $0.asJSON() }
+        ]
+
+        let route = BankrsRouter.createBankAccess
+        sessionManager.request(route.url, method: route.method, parameters: parameters, encoding: JSONEncoding.default, headers: headers)
+            .validate()
+            .responseJSON { response in
+                if response.result.error == nil {
+                    debugPrint("HTTP Response Body: \(String(describing: response.data))")
+                    if let jsonResult = response.result.value as? [String: Any], let jobURI = jsonResult["uri"] as? String {
+                        result(URL(string: jobURI, relativeTo: BankrsRouter.baseURL), nil)
+                        return
+                    }
+                    result(nil, nil)
+                } else {
+                    debugPrint("HTTP Request failed: \(String(describing: response.result.error))")
+                    result(nil, response.result.error)
+                }
+        }
+    }
+
 }
