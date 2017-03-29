@@ -55,4 +55,8 @@ class BankAccessTableViewController: UITableViewController {
         }
     }
 
+    @IBAction func unwindToAccesses(segue: UIStoryboardSegue) {
+        // nothing to do
+    }
+
 }

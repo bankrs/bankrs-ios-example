@@ -11,7 +11,7 @@ import Alamofire
 
 enum BankrsRouter {
 
-    fileprivate static let baseURL = URL(string: "https://api.staging.bankrs.com/v1")
+    fileprivate static let baseURL = URL(string: "https://api.staging.bankrs.com")!
 
     case login
     case logout
@@ -28,14 +28,14 @@ enum BankrsRouter {
 
     var route: (path: String, method: Alamofire.HTTPMethod) {
         switch self {
-        case .login:                         return ("/users/login", .post)
-        case .logout:                        return ("/users/logout", .post)
-        case .getTransactions:               return ("/transactions", .get)
-        case .getCategories:                 return ("/categories", .get)
-        case .getBankAccesses:               return ("/accesses", .get)
-        case .getBankAccess(let identifier): return ("/accesses/\(identifier)", .get)
-        case .createBankAccess:              return ("/accesses", .post)
-        case .getProviders:                  return ("/providers", .get)
+        case .login:                         return ("/v1/users/login", .post)
+        case .logout:                        return ("/v1/users/logout", .post)
+        case .getTransactions:               return ("/v1/transactions", .get)
+        case .getCategories:                 return ("/v1/categories", .get)
+        case .getBankAccesses:               return ("/v1/accesses", .get)
+        case .getBankAccess(let identifier): return ("/v1/accesses/\(identifier)", .get)
+        case .createBankAccess:              return ("/v1/accesses", .post)
+        case .getProviders:                  return ("/v1/providers", .get)
         }
     }
 
