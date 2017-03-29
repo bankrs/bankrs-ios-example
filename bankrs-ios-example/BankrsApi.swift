@@ -76,14 +76,14 @@ class BankrsApi {
             .validate()
             .responseJSON { response in
                 if response.result.error == nil {
-                    debugPrint("HTTP Response Body: \(response.data)")
+                    debugPrint("HTTP Response Body: \(String(describing: response.data))")
                     if let array = response.result.value as? [Any] {
                         result(array.flatMap { Transaction(json: $0) }, nil)
                     } else {
                         result([], nil)
                     }
                 } else {
-                    debugPrint("HTTP Request failed: \(response.result.error)")
+                    debugPrint("HTTP Request failed: \(String(describing: response.result.error))")
                     result([], response.result.error)
                 }
         }
@@ -99,7 +99,7 @@ class BankrsApi {
             .validate()
             .responseJSON { response in
                 if response.result.error == nil {
-                    debugPrint("HTTP Response Body: \(response.data)")
+                    debugPrint("HTTP Response Body: \(String(describing: response.data))")
                     if let json = response.result.value as? [String: Any] {
                         if let jsonCategories = json["categories"] as? [[String: Any]] {
                             var categories = [Int: String]()
@@ -114,7 +114,7 @@ class BankrsApi {
                     }
                     result([:], nil)
                 } else {
-                    debugPrint("HTTP Request failed: \(response.result.error)")
+                    debugPrint("HTTP Request failed: \(String(describing: response.result.error))")
                     result([:], response.result.error)
                 }
         }
@@ -136,17 +136,15 @@ class BankrsApi {
             .validate()
             .responseJSON { response in
                 if response.result.error == nil {
-                    debugPrint("HTTP Response Body: \(response.data)")
-                    if let json = response.result.value as? [String: Any] {
-                        if let jsonAccesses = json["accesses"] as? [[String: Any]] {
-                            let accesses = jsonAccesses.flatMap { return BankAccess(json: $0) }
-                            result(accesses, nil)
-                            return
-                        }
+                    debugPrint("HTTP Response Body: \(String(describing: response.data))")
+                    if let jsonAccesses = response.result.value as? [[String: Any]] {
+                        let accesses = jsonAccesses.flatMap { return BankAccess(json: $0) }
+                        result(accesses, nil)
+                        return
                     }
                     result([], nil)
                 } else {
-                    debugPrint("HTTP Request failed: \(response.result.error)")
+                    debugPrint("HTTP Request failed: \(String(describing: response.result.error))")
                     result([], response.result.error)
                 }
         }
@@ -168,18 +166,53 @@ class BankrsApi {
             .validate()
             .responseJSON { response in
                 if response.result.error == nil {
-                    debugPrint("HTTP Response Body: \(response.data)")
-                    if let json = response.result.value as? [String: Any], let jsonAccess = json["access"] {
+                    debugPrint("HTTP Response Body: \(String(describing: response.data))")
+                    if let jsonAccess = response.result.value {
                         let access = BankAccess(json: jsonAccess)
                         result(access, nil)
                         return
                     }
                     result(nil, nil)
                 } else {
-                    debugPrint("HTTP Request failed: \(response.result.error)")
+                    debugPrint("HTTP Request failed: \(String(describing: response.result.error))")
                     result(nil, response.result.error)
                 }
         }
     }
 
+    static func providers(query: String, _ result: @escaping ([Provider], Error?) -> Void) {
+        guard let sessionToken = sessionToken else {
+            result([], nil)
+            return
+        }
+
+        let headers = [
+            "X-Application-Id": applicationId,
+            "X-Token": sessionToken
+        ]
+
+        let parameters = [
+            "q": query
+        ]
+
+        // Fetch Request
+        sessionManager.request("\(endpoint)/providers", method: .get, parameters: parameters, headers: headers)
+            .validate()
+            .responseJSON { response in
+                if response.result.error == nil {
+                    debugPrint("HTTP Response Body: \(String(describing: response.data))")
+                    if let jsonResult = response.result.value as? [[String: Any]] {
+                        // query results sorted by score
+                        let providers = jsonResult.flatMap { Provider(json: $0["provider"]!) }
+                        result(providers, nil)
+                        return
+                    }
+                    result([], nil)
+                } else {
+                    debugPrint("HTTP Request failed: \(String(describing: response.result.error))")
+                    result([], response.result.error)
+                }
+        }
+    }
+    
 }

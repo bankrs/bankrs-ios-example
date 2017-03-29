@@ -9,11 +9,12 @@
 import Foundation
 
 struct BankAccount {
+
     let id: Int
     let name: String
     let number: String
     let balance: NSDecimalNumber
-    let balanceDate: Date
+    let balanceDate: Date?
     let enabled: Bool
     let currency: String
     let iban: String
@@ -22,11 +23,13 @@ struct BankAccount {
     init?(json: Any) {
         guard let dict = json as? [AnyHashable: Any] else { return nil }
 
+        let dateFormatter = ISO8601DateFormatter()
+
         id = dict["id"] as! Int
         name = dict["name"] as! String
         number = dict["number"] as! String
         balance = NSDecimalNumber(string: dict["balance"] as? String)
-        balanceDate = Date.iso8601Formatter.date(from: dict["balance_date"] as! String)!
+        balanceDate = dateFormatter.date(from: dict["balance_date"] as! String)
         enabled = dict["enabled"] as? Bool ?? false
         currency = dict["currency"] as? String ?? ""
         iban = dict["iban"] as? String ?? ""
