@@ -16,7 +16,7 @@ class ChallengeAnswerTableViewController: UITableViewController {
         super.viewDidLoad()
 
         self.tableView.rowHeight = UITableViewAutomaticDimension
-        self.tableView.estimatedRowHeight = UITableViewAutomaticDimension
+        self.tableView.estimatedRowHeight = 80
     }
 
     // MARK: - Table view data source
@@ -27,6 +27,10 @@ class ChallengeAnswerTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return provider.challenges.count
+    }
+
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -46,6 +50,13 @@ class ChallengeAnswerTableViewController: UITableViewController {
         BankrsApi.addAccess(providerId: provider.id, answers: challengeAnswers) { (jobURL, error) in
             if error == nil {
                 self.performSegue(withIdentifier: "unwindToAccesses", sender: self)
+            } else {
+                let alertController = UIAlertController(title: "Could not add bank access", message: "Please check your credentials.", preferredStyle: .alert)
+                let okAction = UIAlertAction(title: "Ok", style: .default) { (_) in
+                    alertController.dismiss(animated: true, completion: nil)
+                }
+                alertController.addAction(okAction)
+                self.present(alertController, animated: true)
             }
         }
     }

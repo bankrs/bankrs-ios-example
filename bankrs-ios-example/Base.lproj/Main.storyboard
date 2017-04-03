@@ -134,16 +134,16 @@
         <scene sceneID="cJW-op-D8H">
             <objects>
                 <tableViewController title="Provide Challenge" id="YyQ-Cf-V2G" customClass="ChallengeAnswerTableViewController" customModule="bankrs_ios_example" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="THt-lX-xQO">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" sectionHeaderHeight="28" sectionFooterHeight="28" id="THt-lX-xQO">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChallengeAnswerCell" rowHeight="100" id="bQp-Aa-1xv" customClass="ChallengeAnswerTableViewCell" customModule="bankrs_ios_example" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="100"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChallengeAnswerCell" rowHeight="80" id="bQp-Aa-1xv" customClass="ChallengeAnswerTableViewCell" customModule="bankrs_ios_example" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bQp-Aa-1xv" id="kbP-tg-jgd">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="79.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vrr-Cb-Aab">
@@ -165,7 +165,7 @@
                                         <constraint firstAttribute="leadingMargin" secondItem="vrr-Cb-Aab" secondAttribute="leading" id="m0E-cb-pmM"/>
                                         <constraint firstAttribute="topMargin" secondItem="vrr-Cb-Aab" secondAttribute="top" id="nRo-8n-5O4"/>
                                         <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="vrr-Cb-Aab" secondAttribute="trailing" id="rn3-Is-9X9"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="p6E-RB-Dws" secondAttribute="bottom" constant="24.5" id="sTU-ZK-OuI"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="p6E-RB-Dws" secondAttribute="bottom" constant="4.5" id="sTU-ZK-OuI"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="p6E-RB-Dws" secondAttribute="trailing" id="ycr-1Z-x0G"/>
                                     </constraints>
                                 </tableViewCellContentView>

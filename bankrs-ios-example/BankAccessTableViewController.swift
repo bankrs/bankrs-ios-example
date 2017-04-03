@@ -12,13 +12,17 @@ class BankAccessTableViewController: UITableViewController {
 
     var accesses = [BankAccess]()
 
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-
+    func refresh() {
         BankrsApi.bankAccesses { (accesses, _) in
             self.accesses = accesses
             self.tableView.reloadData()
         }
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        refresh()
     }
 
     // MARK: - Table view data source
@@ -56,7 +60,7 @@ class BankAccessTableViewController: UITableViewController {
     }
 
     @IBAction func unwindToAccesses(segue: UIStoryboardSegue) {
-        // nothing to do
+        refresh()
     }
 
 }
