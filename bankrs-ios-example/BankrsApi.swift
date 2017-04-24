@@ -64,8 +64,6 @@ class BankrsApi {
 
     private static let applicationId = "8f80d33b-26ee-4f69-ba7b-6859dde5e207"
 
-    private static let sessionManager = SessionManager(serverTrustPolicyManager: ServerTrustPolicyManager(policies: ["api.staging.bankrs.com": .disableEvaluation]))
-
     static func login(username: String, password: String, _ result: @escaping (Error?) -> Void) {
         let headers = [
             "X-Application-Id": applicationId
@@ -77,7 +75,7 @@ class BankrsApi {
         ]
 
         let route = BankrsRouter.login
-        sessionManager.request(route.url, method: route.method, parameters: body, encoding: JSONEncoding.default, headers: headers).validate().responseJSON { response in
+        Alamofire.request(route.url, method: route.method, parameters: body, encoding: JSONEncoding.default, headers: headers).validate().responseJSON { response in
             switch response.result {
             case .success:
                 print("Login successful")
@@ -104,7 +102,7 @@ class BankrsApi {
         ]
 
         let route = BankrsRouter.logout
-        sessionManager.request(route.url, method: route.method, headers: headers).validate().response { response in
+        Alamofire.request(route.url, method: route.method, headers: headers).validate().response { response in
             self.sessionToken = nil
             result(response.error)
         }
@@ -122,7 +120,7 @@ class BankrsApi {
         ]
 
         let route = BankrsRouter.getTransactions
-        sessionManager.request(route.url, method: route.method, headers: headers)
+        Alamofire.request(route.url, method: route.method, headers: headers)
             .validate()
             .responseJSON { response in
                 if response.result.error == nil {
@@ -145,7 +143,7 @@ class BankrsApi {
         ]
 
         let route = BankrsRouter.getCategories
-        sessionManager.request(route.url, method: route.method, headers: headers)
+        Alamofire.request(route.url, method: route.method, headers: headers)
             .validate()
             .responseJSON { response in
                 if response.result.error == nil {
@@ -182,7 +180,7 @@ class BankrsApi {
         ]
 
         let route = BankrsRouter.getBankAccesses
-        sessionManager.request(route.url, method: route.method, headers: headers)
+        Alamofire.request(route.url, method: route.method, headers: headers)
             .validate()
             .responseJSON { response in
                 if response.result.error == nil {
@@ -212,7 +210,7 @@ class BankrsApi {
         ]
 
         let route = BankrsRouter.getBankAccess(identifier)
-        sessionManager.request(route.url, method: route.method, headers: headers)
+        Alamofire.request(route.url, method: route.method, headers: headers)
             .validate()
             .responseJSON { response in
                 if response.result.error == nil {
@@ -246,7 +244,7 @@ class BankrsApi {
         ]
 
         let route = BankrsRouter.getProviders
-        sessionManager.request(route.url, method: route.method, parameters: parameters, headers: headers)
+        Alamofire.request(route.url, method: route.method, parameters: parameters, headers: headers)
             .validate()
             .responseJSON { response in
                 if response.result.error == nil {
@@ -282,7 +280,7 @@ class BankrsApi {
         ]
 
         let route = BankrsRouter.createBankAccess
-        sessionManager.request(route.url, method: route.method, parameters: parameters, encoding: JSONEncoding.default, headers: headers)
+        Alamofire.request(route.url, method: route.method, parameters: parameters, encoding: JSONEncoding.default, headers: headers)
             .validate()
             .responseJSON { response in
                 if response.result.error == nil {
