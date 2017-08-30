@@ -8,32 +8,28 @@
 
 import Foundation
 
-struct BankAccount {
+struct BankAccount: Decodable {
 
     let id: Int
     let name: String
     let number: String
-    let balance: NSDecimalNumber
+    let balance: Decimal
     let balanceDate: Date?
     let enabled: Bool
     let currency: String
     let iban: String
     let supported: Bool
 
-    init?(json: Any) {
-        guard let dict = json as? [AnyHashable: Any] else { return nil }
-
-        let dateFormatter = ISO8601DateFormatter()
-
-        id = dict["id"] as! Int
-        name = dict["name"] as! String
-        number = dict["number"] as! String
-        balance = NSDecimalNumber(string: dict["balance"] as? String)
-        balanceDate = dateFormatter.date(from: dict["balance_date"] as! String)
-        enabled = dict["enabled"] as? Bool ?? false
-        currency = dict["currency"] as? String ?? ""
-        iban = dict["iban"] as? String ?? ""
-        supported = dict["supported"] as? Bool ?? false
+    enum CodingKeys : String, CodingKey {
+        case id
+        case name
+        case number
+        case balance
+        case balanceDate = "balance_date"
+        case enabled
+        case currency
+        case iban
+        case supported
     }
 
 }

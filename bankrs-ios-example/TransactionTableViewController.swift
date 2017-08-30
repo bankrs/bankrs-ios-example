@@ -127,8 +127,8 @@ class TransactionTableViewController: UITableViewController {
             currencyFormatter.numberStyle = .currency
             currencyFormatter.currencyCode = amount.currency
 
-            cell.amountLabel.text = currencyFormatter.string(from: amount.value)
-            if amount.value.compare(NSDecimalNumber.zero) == .orderedAscending {
+            cell.amountLabel.text = currencyFormatter.string(from: amount.value as NSNumber)
+            if amount.value.isSignMinus {
                 cell.amountLabel.textColor = #colorLiteral(red: 1, green: 0.1491314173, blue: 0, alpha: 1)
             } else {
                 cell.amountLabel.textColor = #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1)

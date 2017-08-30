@@ -65,7 +65,7 @@ class TransactionDetailViewController: UIViewController, UITableViewDataSource {
             cell.detailTextLabel?.text = String(detailItem.userBankAccountId)
         case 8:
             cell.textLabel?.text = "Amount"
-            cell.detailTextLabel?.text = (detailItem.amount?.value).flatMap { NumberFormatter.localizedString(from: $0, number: .decimal) }
+            cell.detailTextLabel?.text = (detailItem.amount?.value).flatMap { NumberFormatter.localizedString(from: $0 as NSNumber, number: .decimal) }
         case 9:
             cell.textLabel?.text = "Currency"
             cell.detailTextLabel?.text = detailItem.amount?.currency

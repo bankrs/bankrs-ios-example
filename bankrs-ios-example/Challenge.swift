@@ -8,22 +8,12 @@
 
 import Foundation
 
-struct Challenge {
+struct Challenge: Decodable {
 
     let id: String
     let description: String?
     let type: String?
     let secure: Bool
     let unstoreable: Bool
-
-    init?(json: Any) {
-        guard let dict = json as? [AnyHashable: Any] else { return nil }
-
-        id = dict["id"] as! String
-        description = dict["desc"] as? String
-        type = dict["type"] as? String
-        secure = dict["secure"] as? Bool ?? true
-        unstoreable = dict["secure"] as? Bool ?? false
-    }
 
 }

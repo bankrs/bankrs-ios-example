@@ -8,14 +8,9 @@
 
 import Foundation
 
-struct Counterparty {
+struct Counterparty: Decodable {
+
     let name: String
     let merchant: String?
 
-    init?(json: Any) {
-        guard let dict = json as? [AnyHashable: Any] else { return nil }
-
-        name = dict["name"] as! String
-        merchant = dict["merchant"] as? String
-    }
 }

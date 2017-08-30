@@ -9,6 +9,7 @@
 import Foundation
 
 struct Transaction {
+
     let id: Int
     let userBankAccountId: Int
     let categoryId: Int?
@@ -20,21 +21,17 @@ struct Transaction {
     let usage: String?
     let type: String?
 
-    init?(json: Any) {
-        guard let dict = json as? [AnyHashable: Any] else { return nil }
-
-        let dateFormatter = ISO8601DateFormatter()
-
-        id = dict["id"] as! Int
-        userBankAccountId = dict["user_bank_account_id"] as! Int
-        categoryId = dict["category_id"] as? Int
-        repeatedTransactionId = dict["repeated_transaction_id"] as? Int
-        counterparty = dict["counterparty"].flatMap { Counterparty(json: $0) }
-        entryDate = dateFormatter.date(from: dict["entry_date"] as! String)
-        settlementDate = dateFormatter.date(from: dict["entry_date"] as! String)
-        amount = Amount(json: dict["amount"]!)
-        usage = dict["usage"] as? String
-        type = dict["type"] as? String
+    enum CodingKeys: String, CodingKey {
+        case id
+        case userBankAccountId = "user_bank_account_id"
+        case categoryId = "category_id"
+        case repeatedTransactionId = "repeated_transaction_id"
+        case counterparty
+        case entryDate = "entry_date"
+        case settlementDate = "settlement_date"
+        case amount
+        case usage
+        case type
     }
 
 }
