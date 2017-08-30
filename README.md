@@ -2,7 +2,7 @@
 
 This is a simple application that illustrates how to the bankrs API from iOS. The app implements a typical multi-banking use case that uses bankrs OS as the only backend.
 
-It is written in Swift 3 as requires Xcode 8.2 or higher.
+It is written in Swift 4 as requires Xcode 9 or higher.
 
 ## How to get started
 
