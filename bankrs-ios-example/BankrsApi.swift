@@ -62,7 +62,10 @@ class BankrsApi {
 
     static var sessionToken: String?
 
-    private static let applicationId = "8f80d33b-26ee-4f69-ba7b-6859dde5e207"
+    // It is fine to hardcode the application ID in your application. We consider it some kind of long-living token.
+    // When you delete an existing applciation ID you make all builds that using it unable to access API. Be sure that you
+    // properly process the applciation ID error response by offering user to update the application with newer version.
+    private static let applicationId = "7b270c43-a516-4e63-b89d-d5bebddf6811"
 
     static func login(username: String, password: String, _ result: @escaping (Error?) -> Void) {
         let headers = [
@@ -125,7 +128,7 @@ class BankrsApi {
             .responseJSON { response in
                 if response.result.error == nil {
                     debugPrint("HTTP Response Body: \(String(describing: response.data))")
-                    if let array = response.result.value as? [Any] {
+                    if let jsonResult = response.result.value as? [String: Any], let array = jsonResult["data"] as? [Any] {
                         result(array.flatMap { Transaction(json: $0) }, nil)
                     } else {
                         result([], nil)
