@@ -2,6 +2,6 @@ disabled_rules:
   - force_cast
   - line_length
   - cyclomatic_complexity
-  - variable_name
+  - identifier_name
 excluded:
   - Pods
