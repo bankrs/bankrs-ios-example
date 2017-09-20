@@ -8,25 +8,20 @@
 
 import Foundation
 
-struct BankAccess {
+struct BankAccess: Decodable {
+
     let id: Int
     let bankId: String
     let name: String?
     let enabled: Bool
     let accounts: [BankAccount]
 
-    init?(json: Any) {
-        guard let dict = json as? [AnyHashable: Any] else { return nil }
-
-        id = dict["id"] as! Int
-        bankId = String(describing: dict["bank_id"])
-        name = dict["name"] as? String
-        enabled = dict["enabled"] as? Bool ?? false
-
-        if let bankAccounts = dict["accounts"] as? [Any] {
-            accounts = bankAccounts.flatMap { return BankAccount(json: $0) }
-        } else {
-            accounts = []
-        }
+    enum CodingKeys: String, CodingKey {
+        case id
+        case bankId = "bank_id"
+        case name
+        case enabled
+        case accounts
     }
+
 }

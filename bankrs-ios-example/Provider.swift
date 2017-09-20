@@ -9,6 +9,7 @@
 import Foundation
 
 struct Provider {
+
     let id: String
     let name: String?
     let description: String?
@@ -18,25 +19,15 @@ struct Provider {
     let postalCode: String?
     let challenges: [Challenge]
 
-    init?(json: Any) {
-        guard let dict = json as? [AnyHashable: Any] else { return nil }
-
-        id = dict["id"] as! String
-        name = dict["name"] as? String
-        description = dict["description"] as? String
-        country = dict["country"] as? String
-        if let urlString = dict["url"] as? String {
-            url = URL(string: urlString)
-        } else {
-            url = nil
-        }
-        address = dict["address"] as? String
-        postalCode = dict["postal_code"] as? String
-        if let challengesJSON = dict["challenges"] as? [Any] {
-            challenges = challengesJSON.flatMap { Challenge(json: $0) }
-        } else {
-            challenges = []
-        }
+    enum CodingKeys: String, CodingKey {
+        case id
+        case name
+        case description
+        case country
+        case url
+        case address
+        case postalCode = "postal_code"
+        case challenges
     }
 
 }

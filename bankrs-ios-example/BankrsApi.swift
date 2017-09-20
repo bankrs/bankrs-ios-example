@@ -59,13 +59,24 @@ enum BankrsRouter {
 
 class BankrsApi {
 
-
     static var sessionToken: String?
 
     // It is fine to hardcode the application ID in your application. We consider it some kind of long-living token.
     // When you delete an existing applciation ID you make all builds that using it unable to access API. Be sure that you
     // properly process the applciation ID error response by offering user to update the application with newer version.
     private static let applicationId = "7b270c43-a516-4e63-b89d-d5bebddf6811"
+
+    private static let decoder: JSONDecoder = {
+        let decoder = JSONDecoder()
+        decoder.dateDecodingStrategy = .iso8601
+        return decoder
+    }()
+
+    private static let encoder: JSONEncoder = {
+        let encoder = JSONEncoder()
+        encoder.dateEncodingStrategy = .iso8601
+        return encoder
+    }()
 
     static func login(username: String, password: String, _ result: @escaping (Error?) -> Void) {
         let headers = [
@@ -125,14 +136,11 @@ class BankrsApi {
         let route = BankrsRouter.getTransactions
         Alamofire.request(route.url, method: route.method, headers: headers)
             .validate()
-            .responseJSON { response in
-                if response.result.error == nil {
-                    debugPrint("HTTP Response Body: \(String(describing: response.data))")
-                    if let jsonResult = response.result.value as? [String: Any], let array = jsonResult["data"] as? [Any] {
-                        result(array.flatMap { Transaction(json: $0) }, nil)
-                    } else {
-                        result([], nil)
-                    }
+            .responseData { response in
+                if let data = response.data, response.result.error == nil {
+                    debugPrint("HTTP Response Body: \(String(describing: data))")
+                    let transactions = (try? decoder.decode([Transaction].self, from: data)) ?? []
+                    result(transactions, nil)
                 } else {
                     debugPrint("HTTP Request failed: \(String(describing: response.result.error))")
                     result([], response.result.error)
@@ -185,15 +193,11 @@ class BankrsApi {
         let route = BankrsRouter.getBankAccesses
         Alamofire.request(route.url, method: route.method, headers: headers)
             .validate()
-            .responseJSON { response in
-                if response.result.error == nil {
-                    debugPrint("HTTP Response Body: \(String(describing: response.data))")
-                    if let jsonAccesses = response.result.value as? [[String: Any]] {
-                        let accesses = jsonAccesses.flatMap { return BankAccess(json: $0) }
-                        result(accesses, nil)
-                        return
-                    }
-                    result([], nil)
+            .responseData { response in
+                if let data = response.data, response.result.error == nil {
+                    debugPrint("HTTP Response Body: \(String(describing: data))")
+                    let accesses = (try? decoder.decode([BankAccess].self, from: data)) ?? []
+                    result(accesses, nil)
                 } else {
                     debugPrint("HTTP Request failed: \(String(describing: response.result.error))")
                     result([], response.result.error)
@@ -215,15 +219,11 @@ class BankrsApi {
         let route = BankrsRouter.getBankAccess(identifier)
         Alamofire.request(route.url, method: route.method, headers: headers)
             .validate()
-            .responseJSON { response in
-                if response.result.error == nil {
-                    debugPrint("HTTP Response Body: \(String(describing: response.data))")
-                    if let jsonAccess = response.result.value {
-                        let access = BankAccess(json: jsonAccess)
-                        result(access, nil)
-                        return
-                    }
-                    result(nil, nil)
+            .responseData { response in
+                if let data = response.data, response.result.error == nil {
+                    debugPrint("HTTP Response Body: \(String(describing: data))")
+                    let access = try? decoder.decode(BankAccess.self, from: data)
+                    result(access, nil)
                 } else {
                     debugPrint("HTTP Request failed: \(String(describing: response.result.error))")
                     result(nil, response.result.error)
@@ -249,16 +249,15 @@ class BankrsApi {
         let route = BankrsRouter.getProviders
         Alamofire.request(route.url, method: route.method, parameters: parameters, headers: headers)
             .validate()
-            .responseJSON { response in
-                if response.result.error == nil {
-                    debugPrint("HTTP Response Body: \(String(describing: response.data))")
-                    if let jsonResult = response.result.value as? [[String: Any]] {
+            .responseData { response in
+                if let data = response.data, response.result.error == nil {
+                    debugPrint("HTTP Response Body: \(String(describing: data))")
+                    if let providers = try? decoder.decode([Provider].self, from: data) {
                         // query results sorted by score
-                        let providers = jsonResult.flatMap { Provider(json: $0["provider"]!) }
                         result(providers, nil)
-                        return
+                    } else {
+                        result([], nil)
                     }
-                    result([], nil)
                 } else {
                     debugPrint("HTTP Request failed: \(String(describing: response.result.error))")
                     result([], response.result.error)
@@ -277,9 +276,14 @@ class BankrsApi {
             "X-Token": sessionToken
         ]
 
+        guard let answersData = try? encoder.encode(answers), let answersJSON = String(data: answersData, encoding: .utf8) else {
+            result(nil, nil)
+            return
+        }
+
         let parameters: Parameters = [
             "provider_id": providerId,
-            "challenge_answers": answers.map { $0.asJSON() }
+            "challenge_answers": answersJSON
         ]
 
         let route = BankrsRouter.createBankAccess

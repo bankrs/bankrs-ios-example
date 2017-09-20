@@ -8,18 +8,10 @@
 
 import Foundation
 
-struct ChallengeAnswer {
+struct ChallengeAnswer: Encodable {
 
     let id: String
     let value: String
     let store: Bool
-
-    func asJSON() -> [String: Any] {
-        return [
-            "id": id,
-            "value": value,
-            "store": store
-        ]
-    }
 
 }

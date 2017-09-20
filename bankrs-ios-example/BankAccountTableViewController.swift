@@ -47,7 +47,7 @@ class BankAccountTableViewController: UITableViewController {
         currencyFormatter.currencyCode = account.currency
 
         cell.textLabel?.text = account.name
-        cell.detailTextLabel?.text = currencyFormatter.string(from: account.balance)
+        cell.detailTextLabel?.text = currencyFormatter.string(from: account.balance as NSNumber)
         cell.accessoryType = account.enabled ? .checkmark : .none
 
         return cell

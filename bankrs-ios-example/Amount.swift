@@ -8,14 +8,9 @@
 
 import Foundation
 
-struct Amount {
-    let value: NSDecimalNumber
+struct Amount: Decodable {
+
+    let value: Decimal
     let currency: String
 
-    init?(json: Any) {
-        guard let dict = json as? [AnyHashable: Any] else { return nil }
-
-        value = NSDecimalNumber(string: dict["value"] as? String)
-        currency = dict["currency"] as! String
-    }
 }
